@@ -1,7 +1,7 @@
 const allArticles = [];
 
 window.addEventListener('load', () => {
-    fetch("http://localhost:3000/knowledge?topics=('SJD','DEN','Airbus A320','United Economy','International Flight','UA 452','UA 338','Mexico','Denver, CO','Cabo San Lucas, MX')")
+    fetch("https://ual-portal.herokuapp.com/knowledge?topics=('SJD','DEN','Airbus A320','United Economy','International Flight','UA 452','UA 338','Mexico','Denver, CO','Cabo San Lucas, MX')")
         .then(data => data.json())
         .then(response => {
             window.allArticles = response;
@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 
     document.querySelector('#searchBar').addEventListener('keyup', (event) => {
         if (event.target.value.length > 2) {
-            fetch('http://localhost:3000/knowledgesearch?searchstring=' + event.target.value)
+            fetch('https://ual-portal.herokuapp.com/knowledgesearch?searchstring=' + event.target.value)
                 .then(data => data.json())
                 .then(response => {
                     renderArticles(response);
