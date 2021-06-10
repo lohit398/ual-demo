@@ -45,6 +45,6 @@ function renderArticles(articles) {
         innernode.appendChild(description);
         node.appendChild(innernode);
 
-        document.querySelector('#searchcontainer').appendChild(node);
+        document.querySelector('#articles').appendChild(node);
     })
 }
